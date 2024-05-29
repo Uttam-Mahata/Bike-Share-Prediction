@@ -1,0 +1,111 @@
+\documentclass{beamer}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{booktabs}
+
+\title{Understanding the Linear Regression Summary}
+\author{Uttam M}
+\date{\today}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}
+    \frametitle{Overview}
+    \tableofcontents
+\end{frame}
+
+\section{Introduction}
+\begin{frame}
+    \frametitle{Introduction}
+    \begin{itemize}
+        \item Linear regression summary provides detailed information about the fitted model.
+        \item Important for interpreting results and diagnosing the model.
+        \item We will explore each term in the summary output.
+    \end{itemize}
+\end{frame}
+
+\section{Model Information}
+\begin{frame}
+    \frametitle{Model Information}
+    \begin{itemize}
+        \item \textbf{Dep. Variable:} The dependent variable (response variable) being predicted.
+        \item \textbf{Model:} Specifies the type of model fitted, e.g., OLS.
+        \item \textbf{Method:} The method used to fit the model, typically least squares for OLS.
+        \item \textbf{Date:} The date the model was run.
+        \item \textbf{Time:} The time the model was run.
+        \item \textbf{No. Observations:} Number of observations (data points) used in the model.
+        \item \textbf{Df Residuals:} Degrees of freedom of residuals, calculated as \( n - k - 1 \) (n: number of observations, k: number of predictors).
+        \item \textbf{Df Model:} Degrees of freedom of the model, typically \( k \) (number of predictors).
+    \end{itemize}
+\end{frame}
+
+\section{Goodness-of-Fit Measures}
+\begin{frame}
+    \frametitle{Goodness-of-Fit Measures}
+    \begin{itemize}
+        \item \textbf{R-squared:} Proportion of the variance in the dependent variable explained by the model.
+        \[
+        R^2 = 1 - \frac{SSR}{SST}
+        \]
+        \item \textbf{Adj. R-squared:} Adjusted R-squared accounts for the number of predictors in the model.
+        \[
+        \bar{R}^2 = 1 - \frac{(1 - R^2)(n - 1)}{n - k - 1}
+        \]
+        \item \textbf{F-statistic:} Tests if at least one predictor variable has a non-zero coefficient.
+        \item \textbf{Prob (F-statistic):} p-value for the F-statistic, indicating the overall significance of the model.
+    \end{itemize}
+\end{frame}
+
+\section{Model Coefficients}
+\begin{frame}
+    \frametitle{Model Coefficients}
+    \begin{itemize}
+        \item \textbf{coef:} Estimated coefficients (\(\hat{\beta}\)) for each predictor variable.
+        \item \textbf{std err:} Standard error of the coefficient estimates.
+        \[
+        \text{SE}(\hat{\beta}) = \sqrt{\frac{\text{Var}(\epsilon)}{\sum (x_i - \bar{x})^2}}
+        \]
+        \item \textbf{t:} t-statistic for each coefficient, calculated as \(\frac{\hat{\beta}}{\text{SE}(\hat{\beta})}\).
+        \item \textbf{P > |t|:} p-value for the t-statistic, testing the null hypothesis that the coefficient is zero.
+        \item \textbf{[0.025, 0.975]:} 95% confidence interval for each coefficient.
+    \end{itemize}
+\end{frame}
+
+\section{Diagnostics}
+\begin{frame}
+    \frametitle{Diagnostics}
+    \begin{itemize}
+        \item \textbf{Omnibus:} Test for the skewness and kurtosis of the residuals (should be normally distributed).
+        \item \textbf{Prob(Omnibus):} p-value for the Omnibus test.
+        \item \textbf{Jarque-Bera (JB):} Another test for normality of residuals.
+        \item \textbf{Prob(JB):} p-value for the Jarque-Bera test.
+        \item \textbf{Skew:} Measure of the asymmetry of the residuals.
+        \item \textbf{Kurtosis:} Measure of the peakedness of the residuals.
+        \item \textbf{Durbin-Watson:} Test for autocorrelation in the residuals.
+    \end{itemize}
+\end{frame}
+
+\section{Additional Statistics}
+\begin{frame}
+    \frametitle{Additional Statistics}
+    \begin{itemize}
+        \item \textbf{Cond. No.:} Condition number, indicating potential multicollinearity. High values suggest multicollinearity.
+        \item \textbf{AIC:} Akaike Information Criterion, used for model comparison (lower values indicate a better model).
+        \item \textbf{BIC:} Bayesian Information Criterion, similar to AIC but with a higher penalty for models with more parameters.
+    \end{itemize}
+\end{frame}
+
+\section{Conclusion}
+\begin{frame}
+    \frametitle{Conclusion}
+    \begin{itemize}
+        \item Understanding the summary output helps in interpreting the regression results accurately.
+        \item Key elements include model coefficients, goodness-of-fit measures, and diagnostic tests.
+        \item Proper interpretation aids in making informed decisions based on the model.
+    \end{itemize}
+\end{frame}
+
+\end{document}

@@ -1,0 +1,128 @@
+\documentclass{beamer}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+\title{Ordinary Least Squares (OLS) Regression}
+\author{Your Name}
+\date{\today}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}
+    \frametitle{Overview}
+    \tableofcontents
+\end{frame}
+
+\section{Introduction to OLS}
+\begin{frame}
+    \frametitle{Introduction to OLS}
+    \begin{itemize}
+        \item Ordinary Least Squares (OLS) is a method for estimating the parameters in a linear regression model.
+        \item It minimizes the sum of the squared differences between observed and predicted values.
+        \item Widely used in statistical analysis and econometrics.
+    \end{itemize}
+\end{frame}
+
+\section{The Linear Regression Model}
+\begin{frame}
+    \frametitle{The Linear Regression Model}
+    \begin{itemize}
+        \item Model: $y_i = \beta_0 + \beta_1 x_{i1} + \beta_2 x_{i2} + \ldots + \beta_k x_{ik} + \epsilon_i$
+        \item $y_i$: dependent variable
+        \item $x_{ij}$: independent variables
+        \item $\beta_j$: parameters to be estimated
+        \item $\epsilon_i$: error term
+    \end{itemize}
+\end{frame}
+
+\section{Assumptions of OLS}
+\begin{frame}
+    \frametitle{Assumptions of OLS}
+    \begin{itemize}
+        \item Linearity: The relationship between the dependent and independent variables is linear.
+        \item Independence: Observations are independent of each other.
+        \item Homoscedasticity: Constant variance of error terms.
+        \item No Multicollinearity: Independent variables are not perfectly collinear.
+        \item Normality: Error terms are normally distributed (for hypothesis testing).
+    \end{itemize}
+\end{frame}
+
+\section{Derivation of the OLS Estimator}
+\begin{frame}
+    \frametitle{Derivation of the OLS Estimator}
+    \begin{itemize}
+        \item Objective: Minimize $S(\beta) = \sum_{i=1}^n (y_i - \beta_0 - \sum_{j=1}^k \beta_j x_{ij})^2$
+        \item Differentiating $S(\beta)$ with respect to $\beta$ and setting to zero gives the normal equations:
+        \[
+        \mathbf{X}^T\mathbf{X}\beta = \mathbf{X}^T\mathbf{y}
+        \]
+        \item Solution:
+        \[
+        \hat{\beta} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{y}
+        \]
+    \end{itemize}
+\end{frame}
+
+\section{Properties of OLS Estimators}
+\begin{frame}
+    \frametitle{Properties of OLS Estimators}
+    \begin{itemize}
+        \item Unbiasedness: $E(\hat{\beta}) = \beta$
+        \item Efficiency: OLS estimators have the lowest variance among all unbiased linear estimators (Gauss-Markov theorem).
+        \item Consistency: $\hat{\beta}$ converges to $\beta$ as sample size increases.
+    \end{itemize}
+\end{frame}
+
+\section{Hypothesis Testing in OLS}
+\begin{frame}
+    \frametitle{Hypothesis Testing in OLS}
+    \begin{itemize}
+        \item $t$-test for individual coefficients:
+        \[
+        t = \frac{\hat{\beta_j}}{SE(\hat{\beta_j})}
+        \]
+        \item $F$-test for overall significance:
+        \[
+        F = \frac{(RSS_{restricted} - RSS_{unrestricted}) / q}{RSS_{unrestricted} / (n - k - 1)}
+        \]
+    \end{itemize}
+\end{frame}
+
+\section{Goodness-of-Fit Measures}
+\begin{frame}
+    \frametitle{Goodness-of-Fit Measures}
+    \begin{itemize}
+        \item $R^2$: Proportion of variance in the dependent variable explained by the independent variables.
+        \[
+        R^2 = 1 - \frac{SSR}{SST}
+        \]
+        \item Adjusted $R^2$: Adjusted for the number of predictors in the model.
+        \[
+        \bar{R}^2 = 1 - \frac{(1 - R^2)(n - 1)}{n - k - 1}
+        \]
+    \end{itemize}
+\end{frame}
+
+\section{Application Examples}
+\begin{frame}
+    \frametitle{Application Examples}
+    \begin{itemize}
+        \item Example 1: Predicting house prices based on various features (size, location, age).
+        \item Example 2: Analyzing the impact of education on earnings.
+    \end{itemize}
+\end{frame}
+
+\section{Conclusion}
+\begin{frame}
+    \frametitle{Conclusion}
+    \begin{itemize}
+        \item OLS is a fundamental technique in regression analysis.
+        \item Understanding its assumptions and properties is crucial for correct application.
+        \item Provides a foundation for more advanced statistical methods.
+    \end{itemize}
+\end{frame}
+
+\end{document}

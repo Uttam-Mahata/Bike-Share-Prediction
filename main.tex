@@ -1,0 +1,106 @@
+\documentclass{beamer}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{pgfplots}
+
+% Theme choice
+\usetheme{CambridgeUS}
+\usecolortheme{seahorse}
+\usepackage{hyperref}
+
+\title{Regression Analysis in Machine Learning}
+\author{}
+\date{\today}
+
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}
+\frametitle{Introduction}
+\begin{itemize}
+    \item Regression analysis is a predictive modeling technique.
+    \item It analyzes the relationship between dependent (target) and independent (predictor) variables.
+    \item Commonly used for forecasting and finding causal relationships.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Types of Regression}
+\begin{itemize}
+    \item \textbf{Linear Regression}: Models the relationship between two variables by fitting a linear equation.
+    \item \textbf{Multiple Linear Regression}: Extends linear regression by using multiple predictors.
+    \item \textbf{Polynomial Regression}: Fits a nonlinear relationship by transforming the predictors.
+    \item \textbf{Logistic Regression}: Used when the dependent variable is binary.
+    \item \textbf{Ridge Regression}: A type of linear regression that includes a regularization term.
+    \item \textbf{Lasso Regression}: Similar to ridge regression but uses L1 regularization.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Linear Regression}
+\begin{itemize}
+    \item Equation: \( y = \beta_0 + \beta_1 x + \epsilon \)
+    \item \(\beta_0\) is the intercept, \(\beta_1\) is the slope, and \(\epsilon\) is the error term.
+    \item The goal is to minimize the sum of squared errors (SSE).
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Multiple Linear Regression}
+\begin{itemize}
+    \item Equation: \( y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \cdots + \beta_n x_n + \epsilon \)
+    \item Used when there are multiple predictor variables.
+    \item The coefficients (\(\beta\)) are estimated using methods like Ordinary Least Squares (OLS).
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Polynomial Regression}
+\begin{itemize}
+    \item Fits a polynomial equation to the data.
+    \item Equation: \( y = \beta_0 + \beta_1 x + \beta_2 x^2 + \cdots + \beta_n x^n + \epsilon \)
+    \item Useful for capturing nonlinear relationships.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Logistic Regression}
+\begin{itemize}
+    \item Used for binary classification problems.
+    \item Equation: \( \log\left(\frac{p}{1-p}\right) = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \cdots + \beta_n x_n \)
+    \item \(p\) is the probability of the event occurring.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Regularization Techniques}
+\begin{itemize}
+    \item \textbf{Ridge Regression}: Adds L2 penalty (\(\lambda \sum_{i=1}^{n} \beta_i^2\)) to the loss function.
+    \item \textbf{Lasso Regression}: Adds L1 penalty (\(\lambda \sum_{i=1}^{n} |\beta_i|\)) to the loss function.
+    \item Helps to prevent overfitting by penalizing large coefficients.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Applications of Regression Analysis}
+\begin{itemize}
+    \item Finance: Predicting stock prices.
+    \item Marketing: Customer demand forecasting.
+    \item Healthcare: Disease progression modeling.
+    \item Economics: GDP growth estimation.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Conclusion}
+\begin{itemize}
+    \item Regression analysis is a versatile tool for predictive modeling.
+    \item Various types of regression are used depending on the nature of the data and the problem.
+    \item Regularization techniques are essential for improving model performance.
+\end{itemize}
+\end{frame}
+
+\end{document}
