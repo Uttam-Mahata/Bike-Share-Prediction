@@ -60,12 +60,6 @@ pip install pandas
 
 
 
-3. **Check Null Value**:
-    - Check for any missing values in the dataset:
-        ```python
-        data.isnull().sum()
-        ```
-
 ## Contributing
 
 Contributions are welcome! Please fork the repository and submit a pull request.
