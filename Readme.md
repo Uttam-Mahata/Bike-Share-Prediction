@@ -1,6 +1,4 @@
-Sure, here is a detailed README file for your Bike-Share-Prediction project:
 
----
 
 # Bike-Share Prediction
 
